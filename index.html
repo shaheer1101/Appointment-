@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Appointment Booking</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at top right, #1a1a1a, #0e0e0e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      color: #fff;
+    }
+
+    .booking-card {
+      width: 400px;
+      padding: 40px;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      box-shadow: 20px 20px 60px #0a0a0a, -20px -20px 60px #2c2c2c;
+      transform: rotateY(10deg);
+      transition: all 0.6s ease;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .booking-card:hover {
+      transform: rotateY(0deg) scale(1.03);
+      box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
+    }
+
+    label {
+      font-size: 14px;
+      color: #ccc;
+      display: block;
+      margin: 8px 0 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border: 2px solid #ffcc00;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, #ffcc00, #ffaa00);
+      border: none;
+      border-radius: 12px;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 204, 0, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-card">
+    <h2>Book Your Appointment 💫</h2>
+    <form action="https://formspree.io/f/mblpgpen" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="service">Select Service</label>
+      <select id="service" name="service" required>
+        <option value="">-- Choose a Service --</option>
+        <option value="Makeup">Makeup</option>
+        <option value="Hair Styling">Hair Styling</option>
+        <option value="Facial">Facial</option>
+        <option value="Consultation">Consultation</option>
+      </select>
+
+      <label for="message">Additional Notes</label>
+      <textarea id="message" name="message" rows="3" placeholder="Any extra details..."></textarea>
+
+      <button type="submit">✨ Book Appointment ✨</button>
+    </form>
+    <div class="footer-text">Designed by Qazi 💛</div>
+  </div>
+
+</body>
+</html>
